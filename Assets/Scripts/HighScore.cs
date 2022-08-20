@@ -6,6 +6,7 @@ using TMPro;
 public class HighScore : MonoBehaviour
 {
     static public int score = 0;
+    static public bool isUpgrade;
     
     void Awake()
     {
@@ -13,6 +14,7 @@ public class HighScore : MonoBehaviour
             score = PlayerPrefs.GetInt("HighScore");
 
         PlayerPrefs.SetInt("HighScore", score);
+        isUpgrade = false;
     }
 
     void Update()
@@ -21,6 +23,9 @@ public class HighScore : MonoBehaviour
         gt.text = "High Score: " + score;
 
         if(score > PlayerPrefs.GetInt("HighScore"))
+        {
             PlayerPrefs.SetInt("HighScore", score);
+            isUpgrade = true;
+        }   
     }
 }

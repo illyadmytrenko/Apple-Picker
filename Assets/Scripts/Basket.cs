@@ -31,6 +31,7 @@ public class Basket : MonoBehaviour
         if (collideWith.tag == "Apple")
             Destroy(collideWith);
 
+        this.GetComponent<AudioSource>().Play();
         int score = int.Parse(scoreGT.text);
         score += 100;
         scoreGT.text = score.ToString();

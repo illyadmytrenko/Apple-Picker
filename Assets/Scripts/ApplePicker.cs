@@ -11,6 +11,7 @@ public class ApplePicker : MonoBehaviour
     public float basketBottomY = -14f;
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
+    public AudioSource melodyWhenLose;
 
     void Start()
     {
@@ -36,11 +37,11 @@ public class ApplePicker : MonoBehaviour
     {
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
 
-        foreach(GameObject tGO in tAppleArray)
+        foreach (GameObject tGO in tAppleArray)
         {
             Destroy(tGO);
         }
-
+        melodyWhenLose.Play();
         int basketIndex = basketList.Count - 1;
         GameObject tBasketGO = basketList[basketIndex];
         basketList.RemoveAt(basketIndex);

@@ -7,7 +7,7 @@ public class AppleTree : MonoBehaviour
     [Header("Set in Inspector")]
     public GameObject applePrefab;
     public float leftAndRightEdge = 10f;
-    [Header("Depend on Difficult")]
+    // Depend on Difficult"
     private float speed;
     private float changeToChangeDirections;
     private float secondsBetweenAppleDrops;
